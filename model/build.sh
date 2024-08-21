@@ -80,7 +80,6 @@ cd -
 # cd ${TARGET_DIR}/custom_nodes
 # [[ -e ComfyUI-Manager ]] || git clone https://github.com/ltdrdata/ComfyUI-Manager.git && (cd ComfyUI-Manager && git fetch && git checkout 2.48.6)
 # cd -
->>>>>>> 79bc7788fb5f632077210c7a2ca9eebd8a4c05d2
 
 if [ -z "${S3_PATH}" ]; then
     exit 0
