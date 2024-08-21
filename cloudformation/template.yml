@@ -33,6 +33,7 @@ Parameters:
     AllowedValues:
       - ml.g4dn.xlarge
       - ml.g4dn.2xlarge
+      - ml.g4dn.4xlarge
       - ml.g5.xlarge
       - ml.g5.2xlarge
     Default: ml.g4dn.xlarge

@@ -37,15 +37,10 @@ done
 
 # download models that you want to include
 # stable-diffusion-xl-base-1.0 
-cp /home/backstage/ComfyUI/models/checkpoints/leosamsHelloworldXL_helloworldXL70.safetensors "${TARGET_DIR}/checkpoints/"
-cp /home/backstage/ComfyUI/models/controlnet/control-lora-depth-rank256.safetensors "${TARGET_DIR}/controlnet/"
-cp /home/backstage/ComfyUI/models/controlnet/control-lora-canny-rank256.safetensors "${TARGET_DIR}/controlnet/"
+wget -nc 'https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors' -P "${TARGET_DIR}/checkpoints"
 
 cd ${TARGET_DIR}/custom_nodes
 [[ -e ComfyUI-Manager ]] || git clone https://github.com/ltdrdata/ComfyUI-Manager.git && (cd ComfyUI-Manager ; git reset --hard 90ae9af6ed2f80343defedb92ac61c79d4dbdc33)
-cd -
-cd ${TARGET_DIR}/custom_nodes
-git clone https://github.com/john-mnz/ComfyUI-Inspyrenet-Rembg && (cd ComfyUI-Inspyrenet-Rembg ; pip install -r requirements.txt)
 cd -
 
 if [ -z "${S3_PATH}" ]; then
